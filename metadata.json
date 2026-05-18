@@ -1,0 +1,8 @@
+{
+  "name": "PassionNeXs",
+  "description": "A hyper-aesthetic, premium dark-mode landing page for the PassionNeXs private creator network, featuring a bento grid and lead capture waitlist form.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

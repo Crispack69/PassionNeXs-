@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-main-bg: #0A0A0A;
+  --color-mint-teal: #5CE1E6;
+  --color-gold: #D4AF37;
+  --color-silver: #C0C0C0;
+  
+  --font-sans: "Inter", sans-serif;
+}
+
+body {
+  background-color: var(--color-main-bg);
+  color: white;
+  min-height: 100vh;
+  font-family: var(--font-sans);
+}
+
+.massive-header {
+  font-family: 'Arial Black', sans-serif;
+  letter-spacing: -2px;
+  line-height: 0.9;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(to right, var(--color-gold), var(--color-silver));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-silver {
+  background: linear-gradient(to right, #FFFFFF, var(--color-silver));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.bento-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(192, 192, 192, 0.15);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bento-card:hover {
+  border-color: var(--color-mint-teal);
+  box-shadow: 0 0 15px rgba(92, 225, 230, 0.1);
+}
+
+.form-input {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(192, 192, 192, 0.2);
+  padding: 0.5rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: white;
+  width: 100%;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--color-mint-teal);
+}
+
+.chip {
+  border: 1px solid rgba(192, 192, 192, 0.3);
+  padding: 2px 8px;
+  border-radius: 99px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  transition: 0.2s;
+  user-select: none;
+}
+
+.chip-active {
+  background: var(--color-mint-teal);
+  color: black;
+  border-color: var(--color-mint-teal);
+}
