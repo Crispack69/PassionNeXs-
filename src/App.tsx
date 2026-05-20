@@ -4,8 +4,9 @@ import { ArrowRight } from 'lucide-react';
 
 const niches = [
   'App Developer', 'Website Development', 'AI', 
-  'Financial Education', 'Art', 'Music', 
-  'Dance', 'Graphic Design', 'Video Editing'
+  'Financial Management', 'Art', 'Music', 
+  'Dance', 'Graphic Design', 'Video Editing', 
+  'Public speaking/Communication skills'
 ];
 
 const roles = ['Mentor', 'Student', 'Freelancer', 'Gig Provider'];
@@ -15,6 +16,7 @@ export default function App() {
     fullName: '',
     contactNumber: '',
     email: '',
+    age: '',
     role: 'Student',
     selectedNiches: ['App Developer'] as string[],
     callTime: '',
@@ -59,6 +61,7 @@ export default function App() {
         fullName: '',
         contactNumber: '',
         email: '',
+        age: '',
         role: 'Student',
         selectedNiches: ['App Developer'],
         callTime: '',
@@ -79,36 +82,14 @@ export default function App() {
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-mint-teal/5 blur-[120px] rounded-full pointer-events-none -z-10" />
       
       {/* Header */}
-      <header className="flex justify-between items-center py-6">
+      <header className="flex flex-col sm:flex-row justify-between items-center py-6 gap-4 sm:gap-0">
         <motion.div 
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="flex items-center space-x-3"
         >
-          <svg width="90" height="48" viewBox="0 0 150 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0 drop-shadow-md">
-            <defs>
-              <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#C59B27" />
-                <stop offset="40%" stopColor="#F5DEB3" />
-                <stop offset="100%" stopColor="#D4AF37" />
-              </linearGradient>
-              <linearGradient id="silverGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-                <stop offset="0%" stopColor="#E5E5E5" />
-                <stop offset="50%" stopColor="#FFFFFF" />
-                <stop offset="100%" stopColor="#A3A3A3" />
-              </linearGradient>
-            </defs>
-            
-            {/* Silver X Stroke */}
-            <path d="M 85 15 L 110 15 L 135 75 L 110 75 Z" fill="url(#silverGrad)" />
-            
-            {/* Gold P */}
-            <path d="M 20 15 L 60 15 C 80 15 88 23 88 38 C 88 53 80 61 60 61 L 42 61 L 42 75 C 38 74 34 74 20 75 Z M 42 32 L 42 45 L 55 45 C 64 45 68 43 68 38 C 68 33 64 32 55 32 Z" fill="url(#goldGrad)" />
-            
-            {/* Mint Arrow */}
-            <path d="M 15 85 Q 90 75 125 20 L 112 20 L 140 2 L 140 32 L 128 22 Q 95 85 15 85 Z" fill="#5CE1E6" />
-          </svg>
+          <img src="/24009.png" alt="PassionNeXs Logo" className="h-[52px] w-auto shrink-0 drop-shadow-2xl" />
           <span className="font-sans font-bold tracking-tighter text-2xl uppercase leading-none mt-1">
             <span className="text-gradient-silver">PassionNe</span>
             <span className="text-gradient-gold">Xs</span>
@@ -198,7 +179,7 @@ export default function App() {
         <section className="bento-card mt-2 p-6 rounded-2xl relative">
           <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-12 gap-6">
             <div className="md:col-span-8 flex flex-col justify-center">
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-4">
                 <input 
                   id="fullName"
                   type="text" 
@@ -207,6 +188,17 @@ export default function App() {
                   onChange={e => setFormData({...formData, fullName: e.target.value})}
                   className="form-input"
                   placeholder="Full Name"
+                />
+                <input 
+                  id="age"
+                  type="number" 
+                  required
+                  min="6"
+                  max="100"
+                  value={formData.age}
+                  onChange={e => setFormData({...formData, age: e.target.value})}
+                  className="form-input"
+                  placeholder="Age (6-100)"
                 />
                 <input 
                   id="contactNumber"
