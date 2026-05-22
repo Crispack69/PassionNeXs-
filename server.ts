@@ -16,6 +16,7 @@ async function startServer() {
         fullName, 
         contactNumber, 
         email, 
+        age,
         role, 
         selectedNiches, 
         callTime, 
@@ -36,6 +37,7 @@ async function startServer() {
       const emailContent = `
         <h2>New PassionNeXs Origin Application</h2>
         <p><strong>Full Name:</strong> ${fullName}</p>
+        <p><strong>Age:</strong> ${age}</p>
         <p><strong>Contact Number:</strong> ${contactNumber}</p>
         <p><strong>Email Address:</strong> ${email}</p>
         <p><strong>Role:</strong> ${role}</p>
